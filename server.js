@@ -1,6 +1,7 @@
 //after creating another react app and doing a ton of stuff on it I was getting annoyed
 //since this lesson is server side learning I just made this instead on the server
 //will keep the other app for future if needed though :)
+//did find a neat webpage out of it: https://dev.to/loujaybee/using-create-react-app-with-express#:~:text=Using%20Create-React-App%20with%20Express%201%20Step%201%3A%20Install,...%207%20Step%207%3A%20Start%20your%20react%20app
 
 import express from 'express';
 import cookieParser from 'cookie-parser';
@@ -28,7 +29,7 @@ app.get('/login', (req, res) => {
             sameSite: 'strict',
         };
         res.cookie('name', queryName, opts);
-        res.send(`${queryName} we got your details bro! We are going to send this shizz to errrr ad agency and malware site to max our profits and flood you with ads! ${name} you messed up BRUH!`);
+        res.send(`${queryName} we got your details bro! We are going to send this shizz to errrr ad agency and malware site to max our profits and flood you with ads! ${queryName} you messed up BRUH!`);
     } else if (cookieName) {
         res.send(`${cookieName} we already got your info dog!!!! BAHAHAHA! *cough* *mmm* *cough* HAHA!`)
     }
